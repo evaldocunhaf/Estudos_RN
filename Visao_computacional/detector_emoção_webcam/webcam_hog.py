@@ -3,7 +3,7 @@ import dlib
 import tensorflow as tf
 import numpy as np
 
-gravar = False
+gravar = True
 
 with open('arquitetura_emocoes.json', 'r') as arquivo:
     arquitetura = arquivo.read()
