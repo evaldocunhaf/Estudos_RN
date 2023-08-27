@@ -16,10 +16,9 @@ while True:
     ok, boudbox = rastreador.update(frame)
     if ok:
         (x, y, w, h) =[int(v) for v in boudbox]
-        cv2.rectangle(frame, (x,y), (x+w, y+h), (0,0,0), 2, 1)
+        cv2.imshow('Rastreamento', frame[y-100:y+h+100, x-100:x+w+100])
     else:
         cv2.putText(frame, 'Erro', (100, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
-
-    cv2.imshow('Rastreamento', frame)
+        cv2.imshow('Erro', frame)
     if cv2.waitKey(1) & 0XFF == 27: #ESC
         break
